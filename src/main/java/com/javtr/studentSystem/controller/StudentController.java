@@ -3,10 +3,9 @@ package com.javtr.studentSystem.controller;
 import com.javtr.studentSystem.model.Student;
 import com.javtr.studentSystem.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/student")
@@ -22,5 +21,14 @@ public class StudentController {
 
         return "new student is added";
     }
+
+    @GetMapping("/getAll")
+    public List<Student> getAll(){
+
+        return studentService.getAllStudents();
+
+    }
+
+
 }
 
