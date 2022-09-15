@@ -10,6 +10,7 @@ import Button from '@mui/material/Button';
 
 export default function StudentComp() {
     const paperStyle = {padding:'50px 20px', witdth:600, margin:'20px auto'};
+
     const[name,setName]=useState('')
     const[address,setAddress]=useState('')
 
@@ -18,7 +19,6 @@ export default function StudentComp() {
       e.preventDefault()
       const student={name,address}
       console.log(student)
-
    
       fetch("http://localhost:8080/student/add",{
         method:"POST",
@@ -33,8 +33,6 @@ export default function StudentComp() {
   }
 
 
-
-
   return (
 
     <Container >
@@ -47,10 +45,12 @@ export default function StudentComp() {
             <TextField fullWidth id="outlined-basic" label="Student Address" variant="outlined" 
               value={address}
               onChange={(e)=>setAddress(e.target.value)}
-              
             />
+
             <Button variant="contained" onClick={handleClick}>Submit</Button>
+            
         </Paper>
+
     </Container>
 
   );
