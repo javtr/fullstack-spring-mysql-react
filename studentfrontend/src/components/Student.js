@@ -17,6 +17,7 @@ export default function StudentComp() {
 
     const handleClick=(e)=>{
       e.preventDefault()
+      
       const student={name,address}
       console.log(student)
    
